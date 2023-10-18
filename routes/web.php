@@ -20,8 +20,6 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::middleware(['auth'])->get('/dashboard', function () {
+Route::middleware(['auth'])->get('/', function () {
     return view('dashboard');
 })->name('dashboard');

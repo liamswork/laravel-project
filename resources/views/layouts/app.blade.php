@@ -14,8 +14,9 @@
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-    <!-- Scripts -->
+    <!-- Scripts and styles -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    @vite('resources/css/app.css')
 </head>
 <body>
     <div id="app">
@@ -24,6 +25,9 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+                @auth
+                    <p>User is authenticated</p>
+                @endauth
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>

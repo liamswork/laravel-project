@@ -11,4 +11,7 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    build: {
+        outDir: 'public', // Specify the output directory
+    },
 });

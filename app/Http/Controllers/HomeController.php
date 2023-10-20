@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Employee;
+use App\Models\Company;
 
 use Illuminate\Http\Request;
 
@@ -25,4 +27,7 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    
+
 }

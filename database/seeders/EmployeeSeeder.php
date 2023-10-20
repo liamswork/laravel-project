@@ -25,7 +25,7 @@ class EmployeeSeeder extends Seeder
                 'employee_id' => $i + 1, // Assuming employee_id starts at 1 and increments
                 'fname' => $firstName,
                 'lname' => $lastName,
-                'company' => $companyId,
+                'company_id' => $companyId,
                 'email' => $email,
                 'phone' => $phoneNumber,
             ]);

@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Company;
+
 
 
 /*
@@ -14,12 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
     return view('auth/login');
 });
 
-Auth::routes();
-
 Route::middleware(['auth'])->get('/', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::get('employees', 'EmployeeController@displayEmployees');
+Route::get('/companies', [App\Http\Controllers\CompanyController::class,'displayCompanies']);

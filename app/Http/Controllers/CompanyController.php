@@ -14,4 +14,15 @@ class CompanyController extends Controller
         return view('companies', ['companies' => $companies]);
     }
     
+    public function displayCompany($slug)
+    {
+            try {
+                $company = Company::where('slug', $slug)->firstOrFail();
+                return view('company', ['company' => $company]);
+
+            } catch (Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+                return view('company404');
+            }
+    }
+    
 }
